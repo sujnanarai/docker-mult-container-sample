@@ -20,5 +20,5 @@ after_success:
   # Take those images and push tem to the Docker Hub
   - docker push sujnanarai/multi-client
   - docker push sujnanarai/multi-nginx
-  - docker push sujnanarai/multi-nginx
+  - docker push sujnanarai/multi-server
   - docker push sujnanarai/multi-worker
