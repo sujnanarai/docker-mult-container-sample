@@ -1,9 +1,7 @@
 # docker-mult-container-sample
 
 
-## Architecture: 
-
-									
+## Architecture: 									
 									|----> Nginx/3000  (React Server)    Worker 
 									|      with Prod React FIles           |
 									|                                      |
