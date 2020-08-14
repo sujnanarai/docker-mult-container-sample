@@ -13,10 +13,10 @@ script:
 after_success:
   - docker build -t sujnanarai/multi-client ./client
   - docker build -t sujnanarai/multi-nginx ./nginx
-  - docker build -t sujnanarai/multi-nginx ./server
+  - docker build -t sujnanarai/multi-server ./server
   - docker build -t sujnanarai/multi-worker ./worker
   # Login to the Docker CLI. Create DOCKER_USERID (docker hub userid) and DOCKER_PASSWORD (docker hub passowrd) in Travis-ci.org for the git repostitory. 
-  - echo "$DOCKER_PASSWORD" | docker login - u "$DOCKER_USERID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERID" --password-stdin
   # Take those images and push tem to the Docker Hub
   - docker push sujnanarai/multi-client
   - docker push sujnanarai/multi-nginx
