@@ -22,3 +22,16 @@ after_success:
   - docker push sujnanarai/multi-nginx
   - docker push sujnanarai/multi-server
   - docker push sujnanarai/multi-worker
+  
+deploy:
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app: mymult-docker
+  env:  MymultDocker-env
+  bucket_name: elasticbeanstalk-ap-south-1-849757610863
+  bucket_path: mymult-docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  
